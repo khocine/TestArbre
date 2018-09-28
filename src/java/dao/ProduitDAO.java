@@ -1,6 +1,7 @@
 
 package dao;
 
+import Modele.Artisans;
 import dao.interfaces.DaoInterface;
 
 
@@ -127,10 +128,7 @@ public class ProduitDAO implements DaoInterface<Produits, String> {
         return list;
     }
 
-    public int getNumberProducts() {
-       Query query = getCurrentSession().createQuery("Select count(*) from Produits");
-       return (int) query.uniqueResult();
-    }
+   
 
     public Produits getRandomProduct() {
         Object result=null;
@@ -144,8 +142,25 @@ public class ProduitDAO implements DaoInterface<Produits, String> {
             }
        return (Produits)result;
     }
-    
-    
+   
+     public List<Produits> getGroupProductsByArtisansId( Artisans _artisan, int startIndex, int numberOfProducts) {
+        
+         
+        Query query= getCurrentSession().createQuery("from Produits where artisans=:_artisan");
+        
+        query.setParameter("_artisan",_artisan);        
+//        query.setFirstResult(startIndex);
+//        query.setMaxResults(numberOfProducts);
+        
+        List<Produits> list = (List<Produits>)query.list();
+        
+        return list;
+    }
+
+    public List<Produits> getGroupProducts(int PRODUCT_PER_PAGE) {
+        List<Produits> list = (List<Produits>) getCurrentSession().createQuery("from Produits where (Select count(*) from Produits)-SUBSTRING (codeProduit ,4 , 3 )<12").list();
+        return list;
+    }
     
 
 }

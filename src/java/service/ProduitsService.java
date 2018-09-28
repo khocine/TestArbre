@@ -6,6 +6,7 @@
 package service;
 
 
+import Modele.Artisans;
 import Modele.Produits;
 //import Modele.ProduitsIngredients;
 import dao.ProduitDAO;
@@ -90,18 +91,29 @@ public class ProduitsService {
 
    
 
-    public int getNumberProducts() {
-        produitDao.openCurrentSessionwithTransaction();
-            int count = produitDao.getNumberProducts();
-            produitDao.closeCurrentSessionwithTransaction();
-            return count;
-    }
+  
 
     public Produits getRandomProduct() {
          produitDao.openCurrentSessionwithTransaction();
             Produits p = produitDao.getRandomProduct();
             produitDao.closeCurrentSessionwithTransaction();
             return p;
+    }
+    
+    public List<Produits> getGroupProducts(int PRODUCT_PER_PAGE) {
+         produitDao.openCurrentSessionwithTransaction();
+            List<Produits> list = produitDao.getGroupProducts(PRODUCT_PER_PAGE);
+            produitDao.closeCurrentSessionwithTransaction();
+            return list;
+    }
+    
+ 
+    
+    public List<Produits> getGroupProductsByArtisansId( Artisans _artisan, int startIndex, int numberOfProducts){
+    produitDao.openCurrentSessionwithTransaction();
+            List<Produits> list = produitDao.getGroupProductsByArtisansId(_artisan, startIndex, numberOfProducts);
+            produitDao.closeCurrentSessionwithTransaction();
+            return list;
     }
     
 }

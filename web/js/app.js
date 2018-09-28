@@ -54,7 +54,7 @@ function checkout(){
 }
 
 function placeOrder(){
-    if ($("#connected") === true) {
+    if ($("#connected").value === true) {
        $("# order").submit();
     }
     else {

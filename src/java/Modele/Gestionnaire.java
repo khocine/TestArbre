@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import static jdk.nashorn.internal.objects.NativeMath.round;
+import service.ArtisanService;
 import service.IngredientsService;
 import service.ProduitsService;
 import service.TaxeEtLivraison;
@@ -25,6 +26,7 @@ import service.TaxeEtLivraison;
 public class Gestionnaire {
     private List<Produits> listeProduits;
     private ProduitsService ps;
+    private ArtisanService as;
    private IngredientsService is;
    private Panier cart;
 
@@ -54,6 +56,7 @@ public class Gestionnaire {
 //    
     public Gestionnaire(){
         Random ran = new Random();
+        as = new ArtisanService();
         ps = new ProduitsService();
         //is = new IngredientsService();
         listeProduits = new ArrayList<Produits>();
@@ -180,6 +183,24 @@ public class Gestionnaire {
         }
         return randomProducts;
     }
+
+    public Object getGroupProductProduts(int PRODUCT_PER_PAGE) {
+        return ps.getGroupProducts(PRODUCT_PER_PAGE);
+    }
+
+    public Artisans findArtisanById(String artisanId) {
+       
+     return as.findById(artisanId);
+     }
+
+    public List<Produits> getGroupProductsByArtisansId(Artisans _artisan, int startIndex, int numberOfProducts) {
+        return ps.getGroupProductsByArtisansId(_artisan, startIndex, numberOfProducts);
+    }
+
+     public List<Produits> getGroupProducts(int startIndex, int numberOfProducts){
+        return ps.getGroupProducts(startIndex, numberOfProducts);
+    }
+    
     
     
 }

@@ -78,7 +78,7 @@
 <nav class="main_nav">
      <ul>
           <li><a href="index.jsp">Accueil</a></li>
-          <li><a href="Catalog">Produits</a></li>
+          <li><a href="Catalog.jsp">Produits</a></li>
           <li><a href="Contact">Contact</a></li>
 <!--          <li>Bienvenue Hocine - <a href="#"><i class="fa fa-sign-out"></i> Déconnexion</a></li>-->
      </ul>
@@ -150,8 +150,8 @@
 		<!-- Social -->
 		<div class="header_social main_nav">
 			<ul>
-				<li>Bienvenue Hocine - <a href="#"><i class="fa fa-sign-out"></i> Déconnexion</a></li>
-<!--                                <li><a href="#"><i class="fa fa-sign-in"></i> Connexion</a></li>-->
+<!--				<li>Bienvenue Hocine - <a href="#"><i class="fa fa-sign-out"></i> Déconnexion</a></li>-->
+                               <li><a href="#"><i class="fa fa-sign-in"></i> Connexion</a></li>
 			</ul>
 		</div>
 	</header>
@@ -192,7 +192,7 @@
                     <li class="page_menu_item menu_mm"><a href="contact.html"><i class="fa fa-sign-in"></i> Connexion</a></li>
 
                     <!-- deconnexion -->
-                    <li class="page_menu_item menu_mm">Hocine Krizou - <a href="contact.html" style="display: inline;"><i class="fa fa-sign-out"></i> Déconnexion</a></li>
+<!--                    <li class="page_menu_item menu_mm">Hocine Krizou - <a href="contact.html" style="display: inline;"><i class="fa fa-sign-out"></i> Déconnexion</a></li>-->
 
 				</ul>
 			</div>

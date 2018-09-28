@@ -34,6 +34,8 @@ private String url;
     private ServletContext sc;
     private RequestDispatcher rd;
     private HttpSession session;
+    private final int PPRODUCT_PER_INDEX_PAGE=8;
+    private final int PRODUCT_PER_PAGE=12;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -54,7 +56,8 @@ private String url;
         Gestionnaire gs = new Gestionnaire();
         
         gs.setDetails("FR");
-       session.setAttribute("lastProducts", gs.getListeProduits());
+       session.setAttribute("lastProducts", gs.getProduitsService().getGroupProducts(PPRODUCT_PER_INDEX_PAGE));
+       session.setAttribute("productsPerPage", gs.getGroupProductProduts(PRODUCT_PER_PAGE));
        session.setAttribute("count", 0);
        session.setAttribute("gs",gs);
        session.setAttribute("nextDayDelivery", TaxeEtLivraison.nextDayDelivery);
