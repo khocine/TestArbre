@@ -19,7 +19,8 @@
 
             <!-- Registration -->
 
-            <form action="ConnexionUtilisateur" name="login-form" id="login-form" class="checkout_form" >    
+            <form action="Utilisteur" name="login-form" id="login-form" class="checkout_form" >
+                <input type="hidden" name="currentPage" value="/index.jsp" />
                 <div class="checkout">
                     <div class="container">
                         <div class="row" >
@@ -36,7 +37,7 @@
                                             <!-- Email -->
                                             <label>Email</label>
                                             <input type="email" name="email" class="checkout_input" required="required">
-                                        </div>
+                                        </div>                                        
                                         <div>
                                             <!-- Password -->
                                             <label>Password</label>

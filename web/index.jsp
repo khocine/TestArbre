@@ -20,6 +20,7 @@
          
     </head>
     <body>
+        
         <div class="super_container">
 
             <!-- Header -->
@@ -255,8 +256,7 @@
 
             <jsp:include page="WEB-INF/Footer.jspf"></jsp:include>
         </div>
-        <script src="js/jquery-3.2.1.min.js"></script>
-     
+        <script src="js/jquery-3.2.1.min.js"></script>        
         <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
         <script src="js/jquery.autocomplete.min.js" type="text/javascript"></script>
         <script src="js/productautocomplete.js" type="text/javascript"></script>

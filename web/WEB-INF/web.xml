@@ -6,6 +6,16 @@
             <include-prelude>/WEB-INF/Header.jsp</include-prelude>
         </jsp-property-group>
     </jsp-config>
+    <filter>
+        <filter-name>UserFiltre</filter-name>
+        <filter-class>Filtres.UserFiltre</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>UserFiltre</filter-name>
+        <servlet-name>Utilisteur</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
     <servlet>
         <servlet-name>MainServlet</servlet-name>
         <servlet-class>control.Initialisation</servlet-class>
@@ -18,6 +28,10 @@
         <servlet-name>Display</servlet-name>
         <servlet-class>control.Display</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Utilisteur</servlet-name>
+        <servlet-class>control.Utilisteur</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MainServlet</servlet-name>
         <url-pattern>/MainServlet</url-pattern>
@@ -29,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>Display</servlet-name>
         <url-pattern>/Display</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Utilisteur</servlet-name>
+        <url-pattern>/Utilisteur</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
